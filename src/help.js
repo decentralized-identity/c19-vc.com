@@ -4,35 +4,7 @@ import bindingModels from './bindingModels'
 const formDataToBindingModel = (addToWalletType, formData) => {
   let bindingModel = bindingModels[addToWalletType];
   switch (addToWalletType) {
-    case 'DIDAuth': {
-      bindingModel = {
-        ...bindingModel,
-        holder: formData.holder,
-      }
-      break;
-    }
-    case 'CertifiedMillTestReport': {
-      bindingModel = {
-        ...bindingModel,
-        issuer: formData.issuer,
-        credentialSubject: {
-          ...bindingModel.credentialSubject,
-          id: formData.credentialSubjectId
-        }
-      }
-      break;
-    }
-    case 'UniversityDegreeCredential': {
-      bindingModel = {
-        ...bindingModel,
-        issuer: formData.issuer,
-        credentialSubject: {
-          ...bindingModel.credentialSubject,
-          id: formData.credentialSubjectId
-        }
-      }
-      break;
-    }
+
     case 'ImmunoglobulinDetectionTestCard': {
       bindingModel = {
         ...bindingModel,
@@ -82,7 +54,6 @@ export const getVpForAddToWalletType = async (addToWalletType, formData) => {
     let vp = await response.json();
     return vp;
   } else {
-
     const response = await fetch(endpoint, {
       method: 'POST',
       mode: 'cors',
@@ -95,7 +66,7 @@ export const getVpForAddToWalletType = async (addToWalletType, formData) => {
       body: JSON.stringify({
         credential: bindingModel, options: {
           proofPurpose: 'assertionMethod',
-          issuer: formData.issuer,
+          issuer: bindingModel.issuer,
           verificationMethod: formData.verificationMethod
         }
       })
