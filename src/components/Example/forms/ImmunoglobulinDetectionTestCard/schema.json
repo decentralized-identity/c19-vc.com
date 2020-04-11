@@ -1,0 +1,20 @@
+{
+    "$id": "immunoglobulin-detection-test-card-vc-request-schema",
+    "type": "object",
+    "title": "Comment",
+    "properties": {
+        "verificationMethod": {
+            "title": "Verification Method",
+            "type": "string"
+        },
+        "credentialSubjectId": {
+            "title": "Credential Subject ID",
+            "type": "string",
+            "readonly": true
+        }
+    },
+    "required": [
+        "verificationMethod",
+        "credentialSubjectId"
+    ]
+}

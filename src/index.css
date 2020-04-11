@@ -1,0 +1,22 @@
+
+html{
+  background: #000;
+  background-image: url("/AdobeStock_327211959.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-repeat: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.MuiFormControl-root {
+  margin-bottom: 16px !important;
+}

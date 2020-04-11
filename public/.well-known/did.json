@@ -1,0 +1,32 @@
+{
+  "@context": "https://w3id.org/did/v0.11",
+  "id": "did:web:c19-vc.com",
+  "publicKey": [
+    {
+      "id": "did:web:c19-vc.com#z6MksHh7qHWvybLg5QTPPdG2DgEjjduBDArV9EF9mRiRzMBN",
+      "type": "Ed25519VerificationKey2018",
+      "controller": "did:web:c19-vc.com",
+      "publicKeyBase58": "DqS5F3GVe3rCxucgi4JBNagjv4dKoHc8TDLDw9kR58Pz"
+    }
+  ],
+  "authentication": [
+    "did:web:c19-vc.com#z6MksHh7qHWvybLg5QTPPdG2DgEjjduBDArV9EF9mRiRzMBN"
+  ],
+  "assertionMethod": [
+    "did:web:c19-vc.com#z6MksHh7qHWvybLg5QTPPdG2DgEjjduBDArV9EF9mRiRzMBN"
+  ],
+  "capabilityDelegation": [
+    "did:web:c19-vc.com#z6MksHh7qHWvybLg5QTPPdG2DgEjjduBDArV9EF9mRiRzMBN"
+  ],
+  "capabilityInvocation": [
+    "did:web:c19-vc.com#z6MksHh7qHWvybLg5QTPPdG2DgEjjduBDArV9EF9mRiRzMBN"
+  ],
+  "keyAgreement": [
+    {
+      "id": "did:web:c19-vc.com#zC5iai1sL93gQxn8LKh1i42fTbpfar65dVx4NYznYfG3Y5",
+      "type": "X25519KeyAgreementKey2019",
+      "controller": "did:web:c19-vc.com",
+      "publicKeyBase58": "6DrzegWwfw8Xg5MsHX95sVnJaPmtXP214B5X9hkG9oRs"
+    }
+  ]
+}
