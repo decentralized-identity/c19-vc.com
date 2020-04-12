@@ -8,7 +8,7 @@ import './App.css';
 
 import AuthenticateWithCHAPI from './components/AuthenticateWithCHAPI';
 import ReceiveCredential from './components/ReceiveCredential'
-import logo from './logo.svg';
+
 
 function App() {
 
@@ -37,8 +37,8 @@ function App() {
     <Theme>
       <div className="App">
         <GithubCorner bannerColor={'#594aa8'} href="https://github.com/decentralized-identity/c19-vc.com" />
-        <div style={{ maxWidth: '512px', margin: 'auto', paddingTop: '10%', }}>
-          <img src={logo} alt="transmute logo" style={{ width: '50%', margin: 'auto', display: 'block', padding: '32px 0px' }} />
+        <div style={{ maxWidth: '512px', margin: 'auto', paddingTop: '8%', }}>
+          <img src={'/dif-logo-white-small.png'} alt="transmute logo" style={{ width: '50%', margin: 'auto', display: 'block', padding: '32px 0px' }} />
           {state.DIDAuth ? <ReceiveCredential DIDAuth={state.DIDAuth} /> : <AuthenticateWithCHAPI onDIDAuth={onDIDAuth} />}
         </div>
       </div>
