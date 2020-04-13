@@ -8,6 +8,22 @@ function AuthenticateWithCHAPI({ onDIDAuth }) {
     return (
         <Paper style={{ padding: '32px', textAlign: 'center' }}>
             <Typography variant="h6" style={{ marginBottom: '32px' }}>Authenticate Wallet</Typography>
+            <Typography style={{ marginBottom: '32px' }}>Currently, this demo only supports <a href="https://w3c-ccg.github.io/credential-handler-api/" rel="noopener noreferrer" target="_blank">CHAPI</a> for authenticating and storing credentials with wallets.</Typography>
+            <div style={{textAlign:'left'}}>
+            <Typography>You will need at least 1 CHAPI enabled wallet to proceed.</Typography>
+            <ul>
+                <li>
+                    Go to <a href="https://wallet.interop.transmute.world/" rel="noopener noreferrer" target="_blank">wallet.interop.transmute.world</a>
+                </li>
+                <li>
+                    Click "Allow" when prompted to "Manage credentials".
+                </li>
+                <li>
+                    Click "Authenticate" below.
+                </li>
+            </ul>
+            </div>
+            
             <Button variant={'contained'} onClick={async () => {
                 // normally this would be contructed on a web server, and passed to the client, 
                 // which would then pass it to CHAPI.
