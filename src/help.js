@@ -27,33 +27,9 @@ const formDataToBindingModel = (addToWalletType, formData) => {
 
 export const getVpForAddToWalletType = async (addToWalletType, formData) => {
   console.log(JSON.stringify(formData, null, 2))
-  let endpoint = 'https://vc.transmute.world/vc-data-model/credentials'
+  let endpoint = 'https://vc.transmute.world/v0.1.0/issue/credentials'
   const bindingModel = formDataToBindingModel(addToWalletType, formData)
 
-  if (addToWalletType === 'DIDAuth') {
-    endpoint = 'https://vc.transmute.world/vc-data-model/presentations'
-
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-      body: JSON.stringify({
-        presentation: bindingModel, options: {
-          challenge: formData.challenge,
-          domain: formData.domain,
-          proofPurpose: formData.proofPurpose,
-          verificationMethod: formData.verificationMethod
-        }
-      })
-    });
-    let vp = await response.json();
-    return vp;
-  } else {
     const response = await fetch(endpoint, {
       method: 'POST',
       mode: 'cors',
@@ -80,5 +56,5 @@ export const getVpForAddToWalletType = async (addToWalletType, formData) => {
       "type": "VerifiablePresentation",
       "verifiableCredential": [vc]
     }
-  }
+  
 }
